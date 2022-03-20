@@ -5,11 +5,10 @@ const DELETE_FAIL_MESSAGE = "No Recipe found"
 
 
 
-const GetRecipes = (req, res) => {
+const GetRecipes = asyncHandler(async (req, res) => {
   console.log(req.body)
   res.status(200).json({message: 'Get OK'}
-  
-)}
+)})
 
 const GetRecipe = asyncHandler(async (req, res) => {
   res.status(200).json({message: `Get ${req.params.id}`}
